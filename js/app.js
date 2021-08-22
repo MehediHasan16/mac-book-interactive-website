@@ -54,19 +54,25 @@ document.getElementById("apply-btn").addEventListener('click', function () {
     const applyPomoCode = document.getElementById("input-pomo-code");
     const applyPomoCodeText = applyPomoCode.value;
     const lestTotalAmount = document.getElementById('totalLest-cost');
-    const lestTotalAmountText = lestTotalAmount.innerText
+    const lestTotalAmountText = lestTotalAmount.innerText;
+    const buttonApply = document.getElementById('apply-btn')
 
 
     const pomoCode = 'stevekaku';
     if (applyPomoCodeText == pomoCode) {
+        buttonApply.disabled = true;
         const discount = (lestTotalAmountText / 100) * 20;
         const discountAmountTatol = lestTotalAmountText - discount;
         lestTotalAmount.innerText = discountAmountTatol;
-
+        buttonApply.disabled = true;
     }
+
+
     else {
+        buttonApply.disabled = false;
         lestTotalAmount.innerText = lestTotalAmountText;
     }
+
     applyPomoCode.value = '';
 
 
